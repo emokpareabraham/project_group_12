@@ -89,11 +89,17 @@
               <div class="datatable-top">
     <div class="datatable-dropdown">
             <label>
-                <select class="datatable-selector"><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="-1">All</option></select> entries per page
+              <form id="per_page_form" method="get" action="{{ url_for('data') }}">
+                <select class="datatable-selector" name="per_page" id="per_page" onchange="this.form.submit()">
+                  <option value="10" {% if g.per_page == 10 %} selected="" {% endif %} >10</option>
+                  <option value="20" {% if g.per_page == 20 %} selected="" {% endif %}>20</option>
+                  <option value="30" {% if g.per_page == 30 %} selected="" {% endif %}>30</option>
+                </select> entries per page
+              </form>
             </label>
         </div>
     <div class="datatable-search">
-            <input class="datatable-input" placeholder="Search name" type="search" title="Search within table">
+            <!--<input class="datatable-input" placeholder="Search name" type="search" title="Search within table">-->
         </div>
 </div>
               <table class="table datatable">
@@ -127,7 +133,7 @@
               </table>
               <!-- End Table with stripped rows -->
               <div class="datatable-bottom">
-    <div class="datatable-info">Showing {{g.start}} to {{g.end}} of {{total_number}} entries</div>
+    <div class="datatable-info">Showing {{g.start+1}} to {{g.end}} of {{total_number}} entries</div>
     <nav class="datatable-pagination">
       <ul class="datatable-pagination-list">
         {%if total_number <= 10 %}

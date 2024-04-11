@@ -26,7 +26,7 @@ def about():
 @app.route("/data")
 def data():
     page = request.args.get('page', 1, type=int)
-    PER_PAGE = request.args.get('per_page', type=int)
+    PER_PAGE = request.args.get('per_page',10, type=int)
     start = (page - 1) * PER_PAGE
 
     end = start + PER_PAGE
