@@ -114,7 +114,7 @@
                   {%for p in players %}
                   <tr>
                     <td>{{p[1]}}</td>
-                    <td>{{current_year-p[2][-4:] | to_int }}</td>
+                    <td>{{g.current_year-p[2][-4:] | to_int }}</td>
                     <td>{{p[3]}}</td>
                     <td>{{p[4]}}</td>
                     <td>{{p[5]}}</td>
@@ -127,9 +127,39 @@
               </table>
               <!-- End Table with stripped rows -->
               <div class="datatable-bottom">
-    <div class="datatable-info">Showing 1 to 10 of 100 entries</div>
-    <nav class="datatable-pagination"><ul class="datatable-pagination-list"><li class="datatable-pagination-list-item datatable-hidden datatable-disabled"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">‹</button></li><li class="datatable-pagination-list-item datatable-active"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">1</button></li><li class="datatable-pagination-list-item"><button data-page="2" class="datatable-pagination-list-item-link" aria-label="Page 2">2</button></li><li class="datatable-pagination-list-item"><button data-page="3" class="datatable-pagination-list-item-link" aria-label="Page 3">3</button></li><li class="datatable-pagination-list-item"><button data-page="4" class="datatable-pagination-list-item-link" aria-label="Page 4">4</button></li><li class="datatable-pagination-list-item"><button data-page="5" class="datatable-pagination-list-item-link" aria-label="Page 5">5</button></li><li class="datatable-pagination-list-item"><button data-page="6" class="datatable-pagination-list-item-link" aria-label="Page 6">6</button></li><li class="datatable-pagination-list-item"><button data-page="7" class="datatable-pagination-list-item-link" aria-label="Page 7">7</button></li><li class="datatable-pagination-list-item datatable-ellipsis datatable-disabled"><button class="datatable-pagination-list-item-link">…</button></li><li class="datatable-pagination-list-item"><button data-page="10" class="datatable-pagination-list-item-link" aria-label="Page 10">10</button></li><li class="datatable-pagination-list-item"><button data-page="2" class="datatable-pagination-list-item-link" aria-label="Page 2">›</button></li></ul></nav>
-</div>
+    <div class="datatable-info">Showing {{g.start}} to {{g.end}} of {{total_number}} entries</div>
+    <nav class="datatable-pagination">
+      <ul class="datatable-pagination-list">
+        {%if total_number <= 10 %}
+        {%for i in range(total_number)%}
+        {%if i == g.page %}
+        <li class="datatable-pagination-list-item datatable-hidden datatable-disabled"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">‹</button></li>
+        <li class="datatable-pagination-list-item datatable-active"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">1</button></li>
+        {% else %}
+        <li class="datatable-pagination-list-item"><a data-page="{{i+1}}" class="datatable-pagination-list-item-link" aria-label="Page {{i+1}}" href="{{ url_for('data', page = i+1, per_page = g.per_page) }}">{{i+1}}</a></li>
+        {% endif %}
+        {% endfor %}
+      {% endif %}
+      
+      {%if total_number > 10 %}
+        {%for i in range(5)%}
+        {%if i+1 == g.page %}
+        <li class="datatable-pagination-list-item datatable-active"><a data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">{{i+1}}</a></li>
+        {%else %}
+        <li class="datatable-pagination-list-item"><a data-page="{{i+1}}" class="datatable-pagination-list-item-link" aria-label="Page 2" href="{{ url_for('data', page = i+1, per_page = g.per_page) }}">{{i+1}}</a></li>
+        {%endif%}
+        {% endfor %}
+      <li>…</li>
+      {%for i in range(total_number-5,total_number)%}
+        <!--<li class="datatable-pagination-list-item datatable-active"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">1</button></li>-->
+        <li class="datatable-pagination-list-item"><a data-page="{{i+1}}" class="datatable-pagination-list-item-link" aria-label="Page 2" href="{{ url_for('data', page = i+1, per_page = g.per_page) }}">{{i+1}}</a></li>
+      {% endfor %}
+      {% endif %}
+
+      
+      
+      </ul>
+      </div>
             </div>
           </div>
 

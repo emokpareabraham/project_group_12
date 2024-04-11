@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, g
 import sqlite3
 import os
 import datetime
@@ -13,6 +13,8 @@ def to_int(value):
 
 app.jinja_env.filters['to_int'] = to_int
 
+PER_PAGE = 10
+
 @app.route("/")
 def index():
     return render_template("index_links.html") 
@@ -23,15 +25,26 @@ def about():
 
 @app.route("/data")
 def data():
-    print(os.getcwd())
+    page = request.args.get('page', 1, type=int)
+    PER_PAGE = request.args.get('per_page', type=int)
+    start = (page - 1) * PER_PAGE
+
+    end = start + PER_PAGE
+
+    print(start, end)
+
     con = sqlite3.connect(r'database\Football.db')
     cursor = con.cursor()
-    players = cursor.execute("SELECT * FROM players limit 10").fetchall()
+    players = cursor.execute(f"SELECT * FROM players limit {start}, {PER_PAGE}").fetchall()
+    total_number = cursor.execute("SELECT COUNT(*) FROM players").fetchone()[0]
     con.close()
 
-    current_year = datetime.datetime.now().year
-    print(players)
-    return render_template('data.html', players=players, current_year = current_year)
+    g.per_page = PER_PAGE
+    g.start = start
+    g.end = end
+    g.page = page
+    g.current_year = datetime.datetime.now().year
+    return render_template('data.html', players=players, total_number = total_number)
 
 
 if __name__=="__main__":
