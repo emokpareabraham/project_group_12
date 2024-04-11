@@ -56,12 +56,17 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapsed" href="data.html">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapsed" href="{{ url_for('index') }}">
+          <i class="bi bi-bar-chart"></i><span>Home</span><i class="bi ms-auto"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#charts-nav" data-bs-toggle="collapsed" href="{{ url_for('data') }}">
           <i class="bi bi-bar-chart"></i><span>Data</span><i class="bi ms-auto"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="show" href="about.html">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="show" href="{{ url_for('about') }}">
           <i class="bi bi-layout-text-window-reverse"></i><span>About</span><i class="bi ms-auto"></i>
         </a>
       </li><!-- End Tables Nav -->

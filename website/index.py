@@ -17,7 +17,7 @@ PER_PAGE = 10
 
 @app.route("/")
 def index():
-    return render_template("index_links.html") 
+    return render_template("index.html") 
 
 @app.route("/about")
 def about():

@@ -9,19 +9,22 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <!-- Favicons -->
+  <link href="/assets/img/favicon.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="/assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: NiceAdmin
@@ -39,7 +42,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <span class="d-none d-lg-block">Python group 12</span>
+        <span class="d-none d-lg-block">Python Group 12</span>
       </a>
     </div><!-- End Logo -->
 
@@ -53,12 +56,17 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapsed" href="data.html">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapsed" href="{{ url_for('index') }}">
+          <i class="bi bi-bar-chart"></i><span>Home</span><i class="bi ms-auto"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapsed" href="{{ url_for('data') }}">
           <i class="bi bi-bar-chart"></i><span>Data</span><i class="bi ms-auto"></i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="show" href="about.html">
+        <a class="nav-link" data-bs-target="#tables-nav" data-bs-toggle="show" href="{{ url_for('about') }}">
           <i class="bi bi-layout-text-window-reverse"></i><span>About</span><i class="bi ms-auto"></i>
         </a>
       </li><!-- End Tables Nav -->
@@ -68,7 +76,6 @@
       
 
     </ul>
-
   </aside><!-- End Sidebar-->
 
   <main id="main" class="main">
