@@ -113,6 +113,7 @@
                     <th>
                       name
                     </th>
+                    <th>birthday</th>
                     <th>height_cm</th>
                     <th>weight_kgs</th>
                     <th>positions</th>
@@ -123,6 +124,7 @@
                 <tbody>
                   {%for p in players %}
                   <tr>
+                    <td>{{p[1]}}</td>
                     <td>{{p[2]}}</td>
                     <td>{{p[3]}}</td>
                     <td>{{p[4]}}</td>
@@ -139,8 +141,8 @@
     <div class="datatable-info">Showing {{g.start+1}} to {{g.end}} of {{total_number}} entries</div>
     <nav class="datatable-pagination">
       <ul class="datatable-pagination-list">
-        {%if total_number <= 10 %}
-        {%for i in range(total_number)%}
+        {%if total_page <= 5 %}
+        {%for i in range(total_page)%}
         {%if i == g.page %}
         <li class="datatable-pagination-list-item datatable-hidden datatable-disabled"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">‹</button></li>
         <li class="datatable-pagination-list-item datatable-active"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">1</button></li>
@@ -150,20 +152,32 @@
         {% endfor %}
       {% endif %}
       
-      {%if total_number > 10 %}
-        {%for i in range(5)%}
+      {%if total_page > 5 %}
+      {%if g.page >3 %}
+      <li class="datatable-pagination-list-item"><a data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 2" href="{{ url_for('data', page = 1, per_page = g.per_page) }}">{{1}}</a></li>
+
+      <li>…</li>
+      {%endif%}
+        
+        {%for i in range(g.page-3,g.page+2)%}
         {%if i+1 == g.page %}
         <li class="datatable-pagination-list-item datatable-active"><a data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">{{i+1}}</a></li>
-        {%else %}
+        {%elif i>-1 and i+1<= total_page%}
         <li class="datatable-pagination-list-item"><a data-page="{{i+1}}" class="datatable-pagination-list-item-link" aria-label="Page 2" href="{{ url_for('data', page = i+1, per_page = g.per_page) }}">{{i+1}}</a></li>
+
         {%endif%}
+        
+
         {% endfor %}
+
+        {%if total_page - g.page >3 %}
       <li>…</li>
-      {%for i in range(total_number-5,total_number)%}
+      {%endif%}
         <!--<li class="datatable-pagination-list-item datatable-active"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">1</button></li>-->
-        <li class="datatable-pagination-list-item"><a data-page="{{i+1}}" class="datatable-pagination-list-item-link" aria-label="Page 2" href="{{ url_for('data', page = i+1, per_page = g.per_page) }}">{{i+1}}</a></li>
-      {% endfor %}
-      {% endif %}
+        {%if g.page+2<total_page%}
+        <li class="datatable-pagination-list-item"><a data-page="{{total_page}}" class="datatable-pagination-list-item-link" aria-label="Page 2" href="{{ url_for('data', page = total_page, per_page = g.per_page) }}">{{total_page}}</a></li>
+        {% endif %}
+        {% endif %}
 
       
       

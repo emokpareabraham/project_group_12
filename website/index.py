@@ -8,11 +8,6 @@ import datetime
 
 app=Flask(__name__,static_folder='assets')
 
-def to_int(value):
-    return int(value)
-
-app.jinja_env.filters['to_int'] = to_int
-
 PER_PAGE = 10
 
 @app.route("/")
@@ -36,15 +31,16 @@ def data():
     con = sqlite3.connect(r'database\Football.db')
     cursor = con.cursor()
     players = cursor.execute(f"SELECT * FROM players limit {start}, {PER_PAGE}").fetchall()
-    total_number = cursor.execute("SELECT COUNT(*) FROM players").fetchone()[0]
+    total_number = cursor.execute("SELECT COUNT(*) FROM players").fetchone()[0] #rows
+    total_page = int(total_number/PER_PAGE)
+    
     con.close()
 
     g.per_page = PER_PAGE
     g.start = start
     g.end = end
     g.page = page
-    g.current_year = datetime.datetime.now().year
-    return render_template('data.html', players=players, total_number = total_number)
+    return render_template('data.html', players=players, total_number = total_number, total_page=total_page)
 
 
 if __name__=="__main__":
