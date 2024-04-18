@@ -37,6 +37,17 @@ Pan Hu
     - README.md
     - requirements.txt   
 
+## Setup Instructions
+1.	Install the required Python packages: pip install pandas sqlite3 Flask.
+2.	Run the Jupyter notebook createdatabase.ipynb to create and set up the SQLite database.
+3.	Use datacollect.ipynb to preprocess and insert data into Football.db.
+4.	Launch the Flask application using python app.py and navigate to http://localhost:5000 to access the web interface.
+   
+## Packages Used
+•	Pandas: For data manipulation and analysis.
+•	SQLite3: For database interactions.
+•	Flask: For setting up the web application.
+
 
 ## Data Collection and Processing
 
