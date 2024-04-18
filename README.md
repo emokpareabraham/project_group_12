@@ -5,7 +5,7 @@ This is a group project for the first semester Python course in Data Analysis fo
 
 **Instructor**
 
-Mark Cassar
+- Mark Cassar
 
 **Groop Members**
 
