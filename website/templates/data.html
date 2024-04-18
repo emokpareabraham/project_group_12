@@ -110,19 +110,21 @@
               <table class="table datatable">
                 <thead>
                   <tr>
-                    <th>name</th>
-                    <th>birthday</th>
-                    <th>height_cm</th>
-                    <th>weight_kgs</th>
-                    <th>positions</th>
-                    <th>nationality</th>
-                    <th>overall_rating</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Birthday</th>
+                    <th>Height (cm)</th>
+                    <th>Weight (kg)</th>
+                    <th>Positions</th>
+                    <th>Nationality</th>
+                    <th>Overall Rating</th>
                   </tr>
                 </thead>
                 <tbody>
                   {%for p in players %}
                   <tr>
                     <td>{{p[1]}}</td>
+                    <td>{{calculate_age(p[2])}}</td>
                     <td>{{p[2]}}</td>
                     <td>{{p[3]}}</td>
                     <td>{{p[4]}}</td>
