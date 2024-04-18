@@ -1,11 +1,10 @@
-# PROJECT_GROUP_5
+# PROJECT
 
-# My name is Abraham
+## Intro
 
-## This is a group project on Python. The task is to create a website that shows the result of processed data.
+This is a group project for the first semester Python course in Data Analysis for Business. This project creates a website that displays data using Python's flask framework, allowing students to gain experience building websites and displaying data with Python.
 
 
-## Introduction
 
 ## Features
 
