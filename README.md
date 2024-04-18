@@ -53,7 +53,7 @@ Pan Hu
 
 The project's data set originates from  [Football Players Data](https://www.kaggle.com/datasets/maso0dahmed/football-players-data) on [Kaggle Datasets](https://www.kaggle.com/datasets). This comprehensive dataset offers detailed information on approximately 17,000 FIFA football players, meticulously scraped from [SoFIFA.com](https://sofifa.com/).
 
-The original data set has 17,000 rows and 51 columns. For the convenience of display, we selected 8 columns which are `name`, `birth_date`, `height_cm`, `weight_kgs`, `positions`, `nationality`, `overall_rating`, and 500 rows.
+The original data set has 17,000 rows and 51 columns. For the convenience of display, we selected 7 columns which are `name`, `birth_date`, `height_cm`, `weight_kgs`, `positions`, `nationality`, `overall_rating`, and 500 rows.
 
 The initial data is acquired in CSV format, undergoes processing via pandas, and is subsequently stored within an SQLite database.
 
