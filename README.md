@@ -45,7 +45,7 @@ Pan Hu
 5.	Activate the Virtual Environment: In the terminal, run the flowing command: `.\venv\Scripts\activate`
 6.	Install Dependencies: In the terminal, , run the flowing command: `pip install -r requirements.txt`
 7.	Open index.py under website folder and run it. The message `Running on http://127.0.0.1:5000` will show.
-8.	Open a browser and input `http://localhost:5000` in the address bar. If everything is right, the page will show.
+8.	Open a browser and input `http://127.0.0.1:5000` in the address bar. If everything is right, the page will show.
    
 
 ## Data Collection and Processing
