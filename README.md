@@ -45,7 +45,9 @@ Pan Hu
    
 ## Packages Used
 •	Pandas: For data manipulation and analysis.
+
 •	SQLite3: For database interactions.
+
 •	Flask: For setting up the web application.
 
 
