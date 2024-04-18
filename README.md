@@ -38,18 +38,15 @@ Pan Hu
     - requirements.txt   
 
 ## Setup Instructions
-1.	Install the required Python packages: pip install pandas sqlite3 Flask.
-2.	Run the Jupyter notebook createdatabase.ipynb to create and set up the SQLite database.
-3.	Use datacollect.ipynb to preprocess and insert data into Football.db.
-4.	Launch the Flask application using python app.py and navigate to http://localhost:5000 to access the web interface.
+1.	Download the file and unzip it
+2.	Open the folder using Visual Studio Code
+3.	In VS Code, Select `View -> Terminal` from the top menu.
+4.	Create Virtual Environment: In the terminal, run the flowing command: python -m venv venv
+5.	Activate the Virtual Environment: In the terminal, run the flowing command: .\venv\Scripts\activate
+6.	Install Dependencies: In the terminal, , run the flowing command: pip install -r requirements.txt
+7.	Open index.py under website folder and run it. The message 'Running on http://127.0.0.1:5000' will show.
+8.	Open a browser and input 'http://localhost:5000' in the address bar. If everything is right, the page will show.
    
-## Packages Used
-•	Pandas: For data manipulation and analysis.
-
-•	SQLite3: For database interactions.
-
-•	Flask: For setting up the web application.
-
 
 ## Data Collection and Processing
 
