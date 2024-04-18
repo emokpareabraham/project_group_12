@@ -49,6 +49,6 @@ The original dataset contained 17,954 rows and 51 columns. After cleaning throug
 - Follow the setup instructions to prepare the project environment and start the analysis.
    
 ## Group Members
-Abraham Emokpare   w0860828
-Huihua Li    w0834927
-Pan Hu    w0839721
+- Abraham Emokpare   w0860828
+- Huihua Li    w0834927
+- Pan Hu    w0839721
