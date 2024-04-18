@@ -10,9 +10,9 @@ This is a group project for the first semester Python course in Data Analysis fo
 **Groop Members**
 
 - Abraham Emokpare   w0860828
-- 
+ 
 - Huihua Li    w0834927
-- 
+ 
 - Pan Hu    w0839721
 
 ## Files Structure
