@@ -61,7 +61,7 @@ The name of the database is `Football` and the table name is `players`
 
 The template of the website is from [NiceAdmin Free](https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/). The assets folder includes all static resources such as JavaScript files, CSS stylesheets, and images. The templates folder includes three pages: index.html, about.html, and data.html. The index.py file contains the python code needed.
 
-When presenting data, the "age" column is included, calculated from the individual's date of birth. And for better understanding, the field columns have been renamed, which are `Name`, `Age`, `Birthday`, `Height (cm)`, `Weight (kg)`, `Positions`, `Over Rating`.
+When presenting data, the "age" column is included, calculated from the individual's date of birth. And for better understanding, the field columns have been renamed, which are `Name`, `Age`, `Birthdate`, `Height (cm)`, `Weight (kg)`, `Positions`, `Over Rating`.
 
 To alleviate server load, we implemented pagination to retrieve 10 data entries from the database per request.
 

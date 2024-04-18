@@ -11,8 +11,7 @@ def calculate_age(birthday):
     age = 0
     current_date = datetime.date.today()
     current_year, current_month,current_day  = current_date.year, current_date.month,current_date.day
-
-    birthday_month, birthday_day, birthday_year = birthday.split('/')
+    birthday_year, birthday_month, birthday_day = birthday.split('-')
     birthday_year = int(birthday_year)
     birthday_month = int(birthday_month)
     birthday_day = int(birthday_day)
