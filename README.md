@@ -8,7 +8,7 @@ This is a group project for the first semester Python course in Data Analysis fo
 
 Mark Cassar
 
-**Groop Members**
+**Group Members**
 
 Abraham Emokpare
 
