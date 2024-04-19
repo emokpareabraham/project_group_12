@@ -63,7 +63,7 @@ The template of the website is from [NiceAdmin Free](https://bootstrapmade.com/n
 
 When presenting data, the "age" column is included, calculated from the individual's date of birth. And for better understanding, the field columns have been renamed, which are `Name`, `Age`, `Birthdate`, `Height (cm)`, `Weight (kg)`, `Positions`, `Over Rating`.
 
-To alleviate server load, we implemented pagination to retrieve 10 data entries from the database per request.
+To reduce server load, we have implemented pagination, which retrieves 10 data entries from the database per request by default. Users also have the option to adjust this to 20 or 30 entries per request.
 
 ## Conclusion
 
