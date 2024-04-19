@@ -4,15 +4,15 @@ This is a group project for the first semester Python course in Data Analysis fo
 
 **Instructor**
 
-Mark Cassar
+- Mark Cassar
 
 **Group Members**
 
-Abraham Emokpare w0860828
+- Abraham Emokpare w0860828
 
-Huihua Li w0834927
+- Huihua Li w0834927
 
-Pan Hu w0839721
+- Pan Hu w0839721
 
 
 ## Files Structure
